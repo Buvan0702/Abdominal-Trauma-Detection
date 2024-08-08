@@ -69,14 +69,46 @@ For inference notebooks and model weights, you may visit our final submission [n
 Our solution was built using the following technologies:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/pytorch.svg" alt="PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/albumentations.svg" alt="Albumentations" width="80">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/segmentation-models-pytorch.svg" alt="Segmentation Models PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/efficientnet-pytorch.svg" alt="EfficientNet PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/timm.svg" alt="timm" width="80">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/dicomsdl.svg" alt="dicomsdl" width="80">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/pytorch-toolbelt.svg" alt="PyTorch Toolbelt" width="80">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/transformers.svg" alt="Transformers" width="80">
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      PyTorch
+    </div>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      Albumentations
+    </div>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      Segmentation Models PyTorch
+    </div>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      EfficientNet PyTorch
+    </div>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      timm
+    </div>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      dicomsdl
+    </div>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      PyTorch Toolbelt
+    </div>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
+      Transformers
+    </div>
+  </div>
 </p>
 
 ## :zap: Complete Code

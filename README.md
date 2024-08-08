@@ -6,8 +6,6 @@ Abdominal Trauma Detection and Classification
   <a href="#trophy-about-the-project">About the Project</a> •
   <a href="#rocket-reproduce-solution">Reproduce Solution</a> •
   <a href="#computer-technology-stack">Technology Stack</a> •
-  <a href="#zap-complete-code">Complete Code</a> •
-  <a href="#memo-complete-writeup">Complete Writeup</a>
 </p>
 
 ## :trophy: About the Project

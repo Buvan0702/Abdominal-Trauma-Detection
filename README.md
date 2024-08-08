@@ -1,4 +1,4 @@
-Here's the modified `README.md` file with SVG icons, and using available media everywhere:
+Here's the updated `README.md` file with correct SVG icon links:
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/logo.svg" alt="RSNA-2023-1st-Place-Solution" width="400">
@@ -69,14 +69,14 @@ For inference notebooks and model weights, you may visit our final submission [n
 Our solution was built using the following technologies:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch.svg" alt="PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/albumentations.svg" alt="Albumentations" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/segmentation-models-pytorch.svg" alt="Segmentation Models PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/efficientnet-pytorch.svg" alt="EfficientNet PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/timm.svg" alt="timm" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/dicomsdl.svg" alt="dicomsdl" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-toolbelt.svg" alt="PyTorch Toolbelt" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/transformers.svg" alt="Transformers" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-logo.svg" alt="PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/albumentations-logo.svg" alt="Albumentations" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/smp-logo.svg" alt="Segmentation Models PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/efficientnet-logo.svg" alt="EfficientNet PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/timm-logo.svg" alt="timm" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/dicomsdl-logo.svg" alt="dicomsdl" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-toolbelt-logo.svg" alt="PyTorch Toolbelt" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/transformers-logo.svg" alt="Transformers" width="80">
 </p>
 
 ## :zap: Complete Code

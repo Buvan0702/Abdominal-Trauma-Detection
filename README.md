@@ -55,10 +55,6 @@ CUDA_VISIBLE_DEVICES=0,2,3 python -m torch.distributed.launch --nproc_per_node=3
 ```
 
 
-### :mag: Inference and Model Weights
-
-For inference notebooks and model weights, you may visit our final submission [notebook](https://www.kaggle.com/nischaydnk/rsna-super-mega-lb-ensemble).
-
 ## :computer: Technology Stack
 
 Our solution was built using the following technologies:
@@ -91,16 +87,12 @@ The complete code for our solution can be found in the following directories:
 │   ├── make_theo_data_volumes.py
 │   └── make_our_data_volumes.py
 └── TRAIN
-    ├── train_coatmed384fullseed.py
-    ├── train_coat_med_newseg_ourdata_4f.py
-    └── train_v2s_try5_v10_fulldata.py
+    ├── train_try11_tf_efficientnetv2_s_in21ft1k_v1_fulldata.py
+    ├── train_segmentation_model.py
 ```
 
 Each script contains the code for a specific part of our solution, including preprocessing, model training, and inference.
 
-## :memo: Complete Writeup
-
-Here is the inference code you may refer to: [link](https://www.kaggle.com/nischaydnk/rsna-super-mega-lb-ensemble).
 
 ### **Split Used:** 4 Fold GroupKFold (Patient Level)
 
@@ -112,7 +104,6 @@ Here is the inference code you may refer to: [link](https://www.kaggle.com/nisch
 
 ### **Part 3:** 2D CNN + RNN Based Approach for Bowel + Extravasation [Stage 2]
 
-![Our Solution Overview](https://raw.githubusercontent.com/Naereen/badges/master/src/solution-overview.png)
 
 ## **Data Preprocessing:**
 
@@ -128,7 +119,6 @@ The targets are derived by normalizing segmentation model masks in 0-1 based on 
 
 ## **Stage 2: 2.5D Approach (2D CNN + RNN):**
 
-![Our 2.5D Approach](https://raw.githubusercontent.com/Naereen/badges/master/src/2.5d-approach.png)
 
 In Stage 2, we trained our models using the volumes either based on our windowing or theo's preprocessing approach and the masks/crops generated from the 3D segmentation approach. Each model is trained for multiple tasks (segmentation + classification). For all 32 sequences, we predicted slice-level masks and sigmoid predictions. Simple maximum aggregation is applied to the sigmoid predictions to generate study-level predictions for submission.
 

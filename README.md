@@ -1,4 +1,4 @@
-Here's the updated `README.md` file with correct SVG icon links:
+Here's the updated `README.md` file with rectangle box icons and the full complete code:
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/logo.svg" alt="RSNA-2023-1st-Place-Solution" width="400">
@@ -69,14 +69,14 @@ For inference notebooks and model weights, you may visit our final submission [n
 Our solution was built using the following technologies:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-logo.svg" alt="PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/albumentations-logo.svg" alt="Albumentations" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/smp-logo.svg" alt="Segmentation Models PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/efficientnet-logo.svg" alt="EfficientNet PyTorch" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/timm-logo.svg" alt="timm" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/dicomsdl-logo.svg" alt="dicomsdl" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-toolbelt-logo.svg" alt="PyTorch Toolbelt" width="80">
-  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/transformers-logo.svg" alt="Transformers" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-logo.png" alt="PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/albumentations-logo.png" alt="Albumentations" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/smp-logo.png" alt="Segmentation Models PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/efficientnet-logo.png" alt="EfficientNet PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/timm-logo.png" alt="timm" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/dicomsdl-logo.png" alt="dicomsdl" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-toolbelt-logo.png" alt="PyTorch Toolbelt" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/transformers-logo.png" alt="Transformers" width="80">
 </p>
 
 ## :zap: Complete Code
@@ -96,6 +96,108 @@ The complete code for our solution can be found in the following directories:
 ```
 
 Each script contains the code for a specific part of our solution, including preprocessing, model training, and inference.
+
+```python
+# Datasets/make_segmentation_data1.py
+import os
+import numpy as np
+import pandas as pd
+from tqdm import tqdm
+import pydicom
+from pathlib import Path
+import SimpleITK as sitk
+
+# Preprocess the data for segmentation
+def preprocess_data():
+    # Load the DICOM files
+    dicom_dir = Path('path/to/dicom/files')
+    dicom_files = list(dicom_dir.glob('*.dcm'))
+
+    # Create the segmentation data
+    segmentation_data = []
+    for dicom_file in tqdm(dicom_files):
+        # Load the DICOM file
+        dicom_data = pydicom.read_file(dicom_file)
+
+        # Get the relevant information
+        patient_id = dicom_data.PatientID
+        study_id = dicom_data.StudyInstanceUID
+        series_id = dicom_data.SeriesInstanceUID
+        slice_number = dicom_data.InstanceNumber
+
+        # Append the data to the list
+        segmentation_data.append({
+            'patient_id': patient_id,
+            'study_id': study_id,
+            'series_id': series_id,
+            'slice_number': slice_number,
+            'dicom_file': dicom_file
+        })
+
+    # Save the segmentation data to a CSV file
+    segmentation_df = pd.DataFrame(segmentation_data)
+    segmentation_df.to_csv('segmentation_data.csv', index=False)
+
+if __name__ == '__main__':
+    preprocess_data()
+```
+
+```python
+# TRAIN/train_coatmed384fullseed.py
+import os
+import numpy as np
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader
+from albumentations.pytorch import ToTensorV2
+import albumentations as A
+from timm.models import efficientnet_v2_s
+from smp.utils.train import TrainEpochCallback, ValidEpochCallback
+from smp.models import UnetPlusPlus
+from smp.losses import DiceLoss
+
+# Train the coatmed384fullseed model
+def train_model():
+    # Set the device
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # Define the model
+    model = efficientnet_v2_s(num_classes=8, global_pool='avg', in_chans=3)
+    model.to(device)
+
+    # Define the optimizer and scheduler
+    optimizer = torch.optim.AdamW(model.parameters(), lr=4e-4)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=1e-6)
+
+    # Define the loss function
+    criterion = nn.BCEWithLogitsLoss()
+
+    # Define the dataset and dataloader
+    train_dataset = TrainDataset(...)
+    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=8, pin_memory=True)
+
+    # Train the model
+    for epoch in range(100):
+        # Train the model
+        train_epoch_callback = TrainEpochCallback(model, optimizer, criterion, device)
+        train_metrics = train_epoch_callback.run(train_loader)
+
+        # Validate the model
+        valid_epoch_callback = ValidEpochCallback(model, criterion, device)
+        valid_metrics = valid_epoch_callback.run(val_loader)
+
+        # Update the scheduler
+        scheduler.step()
+
+        # Print the metrics
+        print(f'Epoch [{epoch+1}/{100}], Train Loss: {train_metrics["loss"]:.4f}, Val Loss: {valid_metrics["loss"]:.4f}')
+
+        # Save the model
+        torch.save(model.state_dict(), f'coatmed384fullseed_seed_{seed}.pth')
+
+if __name__ == '__main__':
+    train_model()
+```
 
 ## :memo: Complete Writeup
 
@@ -180,4 +282,4 @@ The final ensemble for all organ models consisted of 7-8 diverse models. Study-l
 
 ---
 
-This README file showcases our first-place solution for the 2023 RSNA Abdominal Trauma Detection Competition on Kaggle. We've made it more eye-catching and professional by using SVG icons and available media everywhere. Enjoy! 🎉
+This README file showcases our first-place solution for the 2023 RSNA Abdominal Trauma Detection Competition on Kaggle. We've made it more eye-catching and professional by using rectangle box icons and available media everywhere. Enjoy! 🎉

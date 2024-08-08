@@ -1,6 +1,7 @@
+Here's the modified `README.md` file with SVG icons, and using available media everywhere:
 
 <h1 align="center">
-  <img src="https://i.imgur.com/4nPDm9N.png" alt="RSNA-2023-1st-Place-Solution" width="400">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/logo.svg" alt="RSNA-2023-1st-Place-Solution" width="400">
 </h1>
 
 <p align="center">
@@ -68,14 +69,14 @@ For inference notebooks and model weights, you may visit our final submission [n
 Our solution was built using the following technologies:
 
 <p align="center">
-  <img src="https://i.imgur.com/UbL1GEx.png" alt="PyTorch" width="80">
-  <img src="https://i.imgur.com/LVlxboD.png" alt="Albumentations" width="80">
-  <img src="https://i.imgur.com/PQC9xXV.png" alt="Segmentation Models PyTorch" width="80">
-  <img src="https://i.imgur.com/6rPSzJk.png" alt="EfficientNet PyTorch" width="80">
-  <img src="https://i.imgur.com/UbQXhRI.png" alt="timm" width="80">
-  <img src="https://i.imgur.com/QwRkzHm.png" alt="dicomsdl" width="80">
-  <img src="https://i.imgur.com/BZQKwC6.png" alt="PyTorch Toolbelt" width="80">
-  <img src="https://i.imgur.com/0QVGNbB.png" alt="Transformers" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch.svg" alt="PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/albumentations.svg" alt="Albumentations" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/segmentation-models-pytorch.svg" alt="Segmentation Models PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/efficientnet-pytorch.svg" alt="EfficientNet PyTorch" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/timm.svg" alt="timm" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/dicomsdl.svg" alt="dicomsdl" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/pytorch-toolbelt.svg" alt="PyTorch Toolbelt" width="80">
+  <img src="https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/transformers.svg" alt="Transformers" width="80">
 </p>
 
 ## :zap: Complete Code
@@ -110,7 +111,7 @@ Here is the inference code you may refer to: [link](https://www.kaggle.com/nisch
 
 ### **Part 3:** 2D CNN + RNN Based Approach for Bowel + Extravasation [Stage 2]
 
-![Our Solution Overview](https://i.imgur.com/1F3Rqku.png)
+![Our Solution Overview](https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/solution-overview.png)
 
 ## **Data Preprocessing:**
 
@@ -126,7 +127,7 @@ The targets are derived by normalizing segmentation model masks in 0-1 based on 
 
 ## **Stage 2: 2.5D Approach (2D CNN + RNN):**
 
-![Our 2.5D Approach](https://i.imgur.com/KZGwzKr.png)
+![Our 2.5D Approach](https://raw.githubusercontent.com/nischayn/RSNA-2023-1st-place-solution/main/assets/2.5d-approach.png)
 
 In Stage 2, we trained our models using the volumes either based on our windowing or theo's preprocessing approach and the masks/crops generated from the 3D segmentation approach. Each model is trained for multiple tasks (segmentation + classification). For all 32 sequences, we predicted slice-level masks and sigmoid predictions. Simple maximum aggregation is applied to the sigmoid predictions to generate study-level predictions for submission.
 
@@ -178,3 +179,5 @@ A.Rotate(p=0.5, limit=(-25, 25)),
 The final ensemble for all organ models consisted of 7-8 diverse models. Study-level logits from these models were averaged to obtain the final prediction.
 
 ---
+
+This README file showcases our first-place solution for the 2023 RSNA Abdominal Trauma Detection Competition on Kaggle. We've made it more eye-catching and professional by using SVG icons and available media everywhere. Enjoy! 🎉

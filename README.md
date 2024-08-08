@@ -68,48 +68,22 @@ For inference notebooks and model weights, you may visit our final submission [n
 
 Our solution was built using the following technologies:
 
-<p align="center">
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      PyTorch
-    </div>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      Albumentations
-    </div>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      Segmentation Models PyTorch
-    </div>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      EfficientNet PyTorch
-    </div>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      timm
-    </div>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      dicomsdl
-    </div>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      PyTorch Toolbelt
-    </div>
-  </div>
-  <div style="display: inline-block; text-align: center; margin: 10px;">
-    <div style="background-color: #212121; color: white; padding: 10px; border-radius: 5px;">
-      Transformers
-    </div>
-  </div>
-</p>
+Okay, got it. Here's the updated technology stack section in the Markdown format:
+
+## :computer: Technology Stack
+
+Our solution was built using the following technologies:
+
+| Technology | 
+| --- |
+| PyTorch |
+| Albumentations |
+| Segmentation Models PyTorch |
+| EfficientNet PyTorch |
+| timm |
+| dicomsdl |
+| PyTorch Toolbelt |
+| Transformers |
 
 ## :zap: Complete Code
 

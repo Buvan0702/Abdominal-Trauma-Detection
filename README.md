@@ -1,3 +1,7 @@
+<h1 align = 'center'>
+Abdominal Trauma Detection and Classification
+</h1>
+
 <p align="center">
   <a href="#trophy-about-the-project">About the Project</a> •
   <a href="#rocket-reproduce-solution">Reproduce Solution</a> •

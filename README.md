@@ -1,13 +1,23 @@
 
----
+<h1 align="center">
+  <img src="https://i.imgur.com/4nPDm9N.png" alt="RSNA-2023-1st-Place-Solution" width="400">
+</h1>
 
-#  Abdominal Trauma Detection
+<p align="center">
+  <a href="#trophy-about-the-project">About the Project</a> •
+  <a href="#rocket-reproduce-solution">Reproduce Solution</a> •
+  <a href="#computer-technology-stack">Technology Stack</a> •
+  <a href="#zap-complete-code">Complete Code</a> •
+  <a href="#memo-complete-writeup">Complete Writeup</a>
+</p>
 
-Code and Documentation for the first-place solution in the 2023 Abdominal Trauma Detection Competition hosted by RSNA on Kaggle.
+## :trophy: About the Project
 
-## 🚀 Reproduce Solution
+This repository contains the code and documentation for the first-place solution in the 2023 Abdominal Trauma Detection Competition hosted by RSNA on Kaggle.
 
-### 🔍 Preprocessing
+## :rocket: Reproduce Solution
+
+### :microscope: Preprocessing
 
 You can download the preprocessed data directly as instructed in the respective folders. Nevertheless, the steps for generating preprocessed datasets are as follows:
 
@@ -33,7 +43,7 @@ python Datasets/make_our_data_volumes.py
 
 Once all the data has been collected, you'll need to place them in the right directory. For that, you can follow instructions and paths specified in `paths.py`.
 
-### 🏗️ Training Models
+### :hammer: Training Models
 
 For training and replicating our final solution, we have added Python scripts for each model in the `TRAIN` folder. Here are the steps to reproduce the trained models:
 
@@ -49,35 +59,44 @@ CUDA_VISIBLE_DEVICES=0,2,3 python -m torch.distributed.launch --nproc_per_node=3
 CUDA_VISIBLE_DEVICES=0,2,3 python -m torch.distributed.launch --nproc_per_node=3 TRAIN/train_v2s_try5_v10_fulldata.py --seed 3407
 ```
 
-### 🔍 Inference and Model Weights
+### :mag: Inference and Model Weights
 
 For inference notebooks and model weights, you may visit our final submission [notebook](https://www.kaggle.com/nischaydnk/rsna-super-mega-lb-ensemble).
 
-## 💻 Hardware
+## :computer: Technology Stack
 
-All of our models were trained using multiple 3090 (local) or 3X A6000 instances with GPU enabled to run all data preprocessing, model training, and inference on Kaggle notebooks.
+Our solution was built using the following technologies:
 
-![Kaggle GPU Notebooks](https://media.giphy.com/media/WCyaVLxDT4pjHy1GhV/giphy.gif)
+<p align="center">
+  <img src="https://i.imgur.com/UbL1GEx.png" alt="PyTorch" width="80">
+  <img src="https://i.imgur.com/LVlxboD.png" alt="Albumentations" width="80">
+  <img src="https://i.imgur.com/PQC9xXV.png" alt="Segmentation Models PyTorch" width="80">
+  <img src="https://i.imgur.com/6rPSzJk.png" alt="EfficientNet PyTorch" width="80">
+  <img src="https://i.imgur.com/UbQXhRI.png" alt="timm" width="80">
+  <img src="https://i.imgur.com/QwRkzHm.png" alt="dicomsdl" width="80">
+  <img src="https://i.imgur.com/BZQKwC6.png" alt="PyTorch Toolbelt" width="80">
+  <img src="https://i.imgur.com/0QVGNbB.png" alt="Transformers" width="80">
+</p>
 
-## 🛠️ Software
+## :zap: Complete Code
 
-We used [Kaggle GPU notebooks](https://github.com/Kaggle/docker-python/blob/master/gpu.Dockerfile) to run all our inference scripts.
+The complete code for our solution can be found in the following directories:
 
-Below are the packages used in addition to the ones included in the default train scripts provided. All packages were installed via uploaded Kaggle dataset.
+```
+├── Datasets
+│   ├── make_segmentation_data1.py
+│   ├── make_info_data.py
+│   ├── make_theo_data_volumes.py
+│   └── make_our_data_volumes.py
+└── TRAIN
+    ├── train_coatmed384fullseed.py
+    ├── train_coat_med_newseg_ourdata_4f.py
+    └── train_v2s_try5_v10_fulldata.py
+```
 
-| Package Name                  | Repository                                                     | Kaggle Dataset                                          |
-| ----------------------------- | -------------------------------------------------------------- | ------------------------------------------------------- |
-| pytorch 2.0.1                  | https://github.com/pytorch/pytorch                             |                                                         |
-| pretrained models 0.7.4        | https://pypi.org/project/pretrainedmodels/                     | https://www.kaggle.com/datasets/harshitsheoran/contrails-libraries |
-| segmentation_models_pytorch 0.3.3 | https://github.com/qubvel/segmentation_models.pytorch       | https://www.kaggle.com/datasets/harshitsheoran/contrails-libraries |
-| efficientnet_pytorch 0.7.1     | https://github.com/lukemelas/EfficientNet-PyTorch              | https://www.kaggle.com/datasets/harshitsheoran/contrails-libraries |
-| albumentations                 | https://github.com/albumentations-team/albumentations          |                                                         |
-| timm 0.9.7                     | https://github.com/rwightman/pytorch-image-models              |                                                         |
-| dicomsdl 0.109.2               | https://github.com/tsangel/dicomsdl                            | https://www.kaggle.com/datasets/zacstewart/dicomsdl--0-109-2 |
-| pytorch-toolbelt               | https://github.com/BloodAxe/pytorch-toolbelt                   | https://www.kaggle.com/bloodaxe/pytorch-toolbelt        |
-| transformers 4.31.0            | https://github.com/huggingface/transformers                    |                                                         |
+Each script contains the code for a specific part of our solution, including preprocessing, model training, and inference.
 
-## 📚 Complete Writeup
+## :memo: Complete Writeup
 
 Here is the inference code you may refer to: [link](https://www.kaggle.com/nischaydnk/rsna-super-mega-lb-ensemble).
 

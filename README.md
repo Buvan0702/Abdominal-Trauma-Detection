@@ -1,9 +1,3 @@
-Here's the updated `README.md` file with public available SVG icons and logos:
-
-<h1 align="center">
-  <img src="https://raw.githubusercontent.com/Naereen/badges/master/src/pytorch.svg" alt="PyTorch" width="400">
-</h1>
-
 <p align="center">
   <a href="#trophy-about-the-project">About the Project</a> •
   <a href="#rocket-reproduce-solution">Reproduce Solution</a> •

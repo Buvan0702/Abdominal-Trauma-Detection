@@ -169,5 +169,3 @@ A.Rotate(p=0.5, limit=(-25, 25)),
 The final ensemble for all organ models consisted of 7-8 diverse models. Study-level logits from these models were averaged to obtain the final prediction.
 
 ---
-
-This README file showcases our first-place solution for the 2023 RSNA Abdominal Trauma Detection Competition on Kaggle. We've made it more eye-catching and professional by using public available SVG icons and logos. Enjoy! 🎉

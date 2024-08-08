@@ -87,6 +87,7 @@ The complete code for our solution can be found in the following directories:
 └── TRAIN
     ├── train_try11_tf_efficientnetv2_s_in21ft1k_v1_fulldata.py
     ├── train_segmentation_model.py
+    ├── train_v2s_try5_v10_fulldata
 ```
 
 Each script contains the code for a specific part of our solution, including preprocessing, model training, and inference.
